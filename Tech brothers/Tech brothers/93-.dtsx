@@ -1,0 +1,102 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/4/2021 8:31:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-1SL897L"
+  DTS:CreatorName="DESKTOP-1SL897L\farho"
+  DTS:DTSID="{AB147D53-3950-49B5-A45C-8C42B3596ED5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.166"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{A405DFFA-C17F-4C4B-9792-9C387C58CA3D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FTP Connection Manager]"
+      DTS:CreationName="FTP"
+      DTS:DTSID="{939E75D4-5527-4654-B18E-2C18F3A4A2FB}"
+      DTS:ObjectName="FTP Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="192.168.1.12:21">
+          <DTS:FtpConnection
+            DTS:ServerName="192.168.1.12"
+            DTS:ServerUserName="da">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQ2JIqpMYSkCtNIZD1ZERxQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD0qJ3azlu48xL3tQGC0a9x5V4aNuf+En+CgUwb1q2sMQAAAAAOgAAAAAIAACAAAABAhC5ZAGUwj49huAF4k6ev4VTiZMUAv7JeWm57GfPWfhAAAADgf0rV3H+32Fdww0xQAKCLQAAAADm65GxPN7DXFHYtZFWIYj1eHH/uTgXajRjaLqUGVS4vGz5rypS3yxctgWUaozRsuI501O1v//mJpEbS6AKQR78</DTS:Property>
+          </DTS:FtpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4257F732-D9CB-4708-A521-F2303CBAE418}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LocalFolderPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\farho\OneDrive\Desktop\SSIS down</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C838A1D4-64DE-479B-9055-339BBA3A6FA3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RemoteFolderPath">
+      <DTS:VariableValue
+        DTS:DataType="8">/diyorbek/*.*</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FTP Task"
+      DTS:CreationName="Microsoft.FtpTask"
+      DTS:Description="FTP Task"
+      DTS:DTSID="{18290D84-94BB-4AB5-BAE2-738519C6EFCC}"
+      DTS:ExecutableType="Microsoft.FtpTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FTP Task"
+      DTS:TaskContact="FTP Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FtpData
+          ConnectionName="{939E75D4-5527-4654-B18E-2C18F3A4A2FB}"
+          TaskOperationType="Receive"
+          TaskIsLocalPathVar="True"
+          TaskLocalPath="User::LocalFolderPath"
+          TaskIsRemotePathVar="True"
+          TaskRemotePath="User::RemoteFolderPath" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\FTP Task"
+          TopLeft="344.166652990713,86.6666673554315" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

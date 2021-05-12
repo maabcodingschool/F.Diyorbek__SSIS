@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/6/2021 12:58:45 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-1SL897L"
+  DTS:CreatorName="DESKTOP-1SL897L\farho"
+  DTS:DTSID="{9BF62A62-EBCE-4BA7-B77E-82E09ACB8658}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.166"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{AEBE3538-333D-4239-80DD-144E48204059}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FTP Connection Manager]"
+      DTS:CreationName="FTP"
+      DTS:DTSID="{BA2E06EB-C98B-4EBF-8F43-0DA758B9E50F}"
+      DTS:ObjectName="FTP Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="192.168.1.12:21">
+          <DTS:FtpConnection
+            DTS:ServerName="192.168.1.12"
+            DTS:ServerUserName="da">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQ2JIqpMYSkCtNIZD1ZERxQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACTinnA/QGtNC7HovG0mbMKkJHMq0OObqaMwkY4dBYqkwAAAAAOgAAAAAIAACAAAACRGa7PfqJqKu7AhNb+6U4Oir0HQnk27nkGaIFExaG0KhAAAAAqaml2jqcLT8Cbik15bTkIQAAAAEHtDtlIa+akPh7AUsk7N7AaI73spGg02TZmPJzv7YxJNtMnDlw6tlZ5pAaDZqlGATf2f5gDxu3sMaMadBSRCXo</DTS:Property>
+          </DTS:FtpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Telegram.exe]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{33540C87-06EA-47FA-9DD9-D2CFAD31FC2A}"
+      DTS:ObjectName="Telegram.exe">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\farho\OneDrive\Desktop\ftp\diyorbek\Telegram.exe" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\FTP Task"
+      DTS:CreationName="Microsoft.FtpTask"
+      DTS:Description="FTP Task"
+      DTS:DTSID="{579F3EF1-F2A6-4177-964A-85E43DB90CD9}"
+      DTS:ExecutableType="Microsoft.FtpTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="FTP Task"
+      DTS:TaskContact="FTP Task; Microsoft Corporation; SQL Server 2019; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FtpData
+          ConnectionName="{BA2E06EB-C98B-4EBF-8F43-0DA758B9E50F}"
+          TaskOperationType="DeleteLocal"
+          TaskLocalPath="Telegram.exe" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\FTP Task"
+          TopLeft="377.499984999498,101.400000805855" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
